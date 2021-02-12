@@ -1,0 +1,13 @@
+version: '2.2'
+
+services:
+  web:
+    build: .
+    command: python fabrique_polls_api/manage.py runserver 0.0.0.0:8000
+    container_name: django_web
+    environment:
+      - DATABASE_URL
+    volumes:
+      - .:/fabrique_polls_api
+    ports:
+      - "8000:8000"
