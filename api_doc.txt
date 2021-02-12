@@ -1,0 +1,144 @@
+Polls API
+
+
+ANSWERS
+read
+GET /answers/{id}/
+
+The following parameters should be included in the URL path.
+id
+
+
+
+
+POLLS
+list
+GET /polls/
+
+
+
+
+create
+POST /polls/
+
+The request body should be a "application/json" encoded object, containing the following items.
+poll_name
+end_date
+description
+
+
+
+
+read
+GET /polls/{id}/
+
+The following parameters should be included in the URL path.
+id
+
+
+
+
+update
+PUT /polls/{id}/
+
+The following parameters should be included in the URL path.
+id
+
+The request body should be a "application/json" encoded object, containing the following items.
+poll_name
+end_date
+description
+
+
+
+
+partial_update
+PATCH /polls/{id}/
+
+The following parameters should be included in the URL path.
+id
+Request Body
+
+The request body should be a "application/json" encoded object, containing the following items.
+poll_name
+end_date
+description
+
+
+
+
+delete
+DELETE /polls/{id}/
+
+The following parameters should be included in the URL path.
+id required
+
+
+
+
+questions > list
+GET /polls/{id}/questions/
+
+The following parameters should be included in the URL path.
+id
+
+
+
+
+questions > create
+POST /polls/{id}/questions/
+
+The following parameters should be included in the URL path.
+id
+
+The request body should be a "application/json" encoded object, containing the following items.
+answers
+question_text
+question_type
+poll
+
+
+
+
+questions > read
+GET /polls/{id}/questions/{question_pk}/
+
+The following parameters should be included in the URL path.
+id
+question_pk
+
+
+
+
+questions > partial_update
+PATCH /polls/{id}/questions/{question_pk}/
+
+The following parameters should be included in the URL path.
+id
+question_pk
+
+The request body should be a "application/json" encoded object, containing the following items.
+answers
+question_text
+question_type
+poll
+
+
+
+
+questions > delete
+DELETE /polls/{id}/questions/{question_pk}/
+
+The following parameters should be included in the URL path.
+id
+question_pk
+
+
+
+
+questions > answers > create
+POST /polls/{id}/questions/{question_pk}/answers/
+
+The following parameters should be included in the URL path.
+id
+question_pk
