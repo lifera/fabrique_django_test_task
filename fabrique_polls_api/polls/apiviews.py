@@ -32,9 +32,9 @@ class QuestionList(viewsets.ModelViewSet):
         queryset = Question.objects.filter(poll_id=self.kwargs["pk"])
         return queryset
 
-    def retrieve(self, *args, **kwargs):
-        queryset = Question.objects.filter(id=self.kwargs["question_pk"])
-        question = get_object_or_404(queryset, pk=self.kwargs["question_pk"])
+    def retrieve(self, request, pk, question_pk):
+        queryset = Question.objects.filter(id=question_pk)
+        question = get_object_or_404(queryset, pk=question_pk)
         serializer = QuestionSerializer(question)
         return Response(serializer.data)
 
